@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#7C3AED</color>
+    <color name="colorPrimaryVariant">#5B21B6</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#F59E42</color>
+    <color name="colorSecondaryVariant">#B45309</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorBackground">#F8F5FF</color>
+    <color name="colorOnBackground">#1A1A1A</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnSurface">#1A1A1A</color>
+    <color name="colorError">#EF4444</color>
+    <color name="colorOnError">#FFFFFF</color>
+    <color name="chipSelected">#E0E7FF</color>
+    <color name="chipUnselected">#F3F4F6</color>
+    <color name="chipText">#3730A3</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

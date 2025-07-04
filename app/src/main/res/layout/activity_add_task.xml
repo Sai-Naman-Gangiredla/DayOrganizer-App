@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:title="Add Task"
+            android:titleTextColor="@android:color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:navigationIcon="@drawable/ic_arrow_back" />
+
+        <AutoCompleteTextView
+            android:id="@+id/titleInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Task Title"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/categoryLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Category"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/titleInput"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/categoryChipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/categoryLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:singleSelection="true"
+            app:selectionRequired="true">
+            <com.google.android.material.chip.Chip
+                android:id="@+id/personalChip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personal"
+                app:chipBackgroundColor="@color/chipUnselected"
+                app:chipStrokeColor="@color/colorPrimary"
+                app:chipStrokeWidth="1dp"
+                app:checkedIconVisible="false"
+                app:checkedIconEnabled="false"
+                app:chipIconVisible="false" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/workChip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Work"
+                app:chipBackgroundColor="@color/chipUnselected"
+                app:chipStrokeColor="@color/colorPrimary"
+                app:chipStrokeWidth="1dp"
+                app:checkedIconVisible="false"
+                app:checkedIconEnabled="false"
+                app:chipIconVisible="false" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/studyChip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Study"
+                app:chipBackgroundColor="@color/chipUnselected"
+                app:chipStrokeColor="@color/colorPrimary"
+                app:chipStrokeWidth="1dp"
+                app:checkedIconVisible="false"
+                app:checkedIconEnabled="false"
+                app:chipIconVisible="false" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <TextView
+            android:id="@+id/priorityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Priority"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/categoryChipGroup"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <RadioGroup
+            android:id="@+id/priorityGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/priorityLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/lowPriority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Low"
+                android:checked="true" />
+            <RadioButton
+                android:id="@+id/mediumPriority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium" />
+            <RadioButton
+                android:id="@+id/highPriority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="High" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/dateInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Select Date"
+            android:focusable="false"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/priorityGroup"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/timeInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Select Time"
+            android:focusable="false"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/dateInput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Save Task"
+            android:textColor="@color/colorOnPrimary"
+            android:backgroundTint="@color/colorPrimary"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/timeInput"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView> 
