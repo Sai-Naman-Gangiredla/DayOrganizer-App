@@ -93,6 +93,3 @@ app/src/main/res/
 - Task templates and recurring tasks
 
 ---
-
-**Developed for Android Mini Project**  
-*College Project Submission*
