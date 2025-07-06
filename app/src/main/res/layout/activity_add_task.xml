@@ -2,12 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="@color/darkerBackground">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
@@ -26,8 +28,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Task Title"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black"
+            android:backgroundTint="@color/darkerBackground"
+            android:textColor="@color/textLight"
+            android:textColorHint="@color/hintLight"
+            android:background="@drawable/input_field_bg"
             app:layout_constraintTop_toBottomOf="@id/toolbar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,6 +43,7 @@
             android:layout_height="wrap_content"
             android:text="Category"
             android:textStyle="bold"
+            android:textColor="@color/textLight"
             app:layout_constraintTop_toBottomOf="@id/titleInput"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="16dp" />
@@ -57,7 +62,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Personal"
-                app:chipBackgroundColor="@color/chipUnselected"
+                android:textColor="@color/chip_text_selector"
+                app:chipBackgroundColor="@color/chip_bg_selector"
                 app:chipStrokeColor="@color/colorPrimary"
                 app:chipStrokeWidth="1dp"
                 app:checkedIconVisible="false"
@@ -69,7 +75,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Work"
-                app:chipBackgroundColor="@color/chipUnselected"
+                android:textColor="@color/chip_text_selector"
+                app:chipBackgroundColor="@color/chip_bg_selector"
                 app:chipStrokeColor="@color/colorPrimary"
                 app:chipStrokeWidth="1dp"
                 app:checkedIconVisible="false"
@@ -81,7 +88,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Study"
-                app:chipBackgroundColor="@color/chipUnselected"
+                android:textColor="@color/chip_text_selector"
+                app:chipBackgroundColor="@color/chip_bg_selector"
                 app:chipStrokeColor="@color/colorPrimary"
                 app:chipStrokeWidth="1dp"
                 app:checkedIconVisible="false"
@@ -95,6 +103,7 @@
             android:layout_height="wrap_content"
             android:text="Priority"
             android:textStyle="bold"
+            android:textColor="@color/textLight"
             app:layout_constraintTop_toBottomOf="@id/categoryChipGroup"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="16dp" />
@@ -111,17 +120,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Low"
-                android:checked="true" />
+                android:checked="true"
+                android:buttonTint="@color/textLight"
+                android:textColor="@color/textLight" />
             <RadioButton
                 android:id="@+id/mediumPriority"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Medium" />
+                android:text="Medium"
+                android:buttonTint="@color/textLight"
+                android:textColor="@color/textLight" />
             <RadioButton
                 android:id="@+id/highPriority"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="High" />
+                android:text="High"
+                android:buttonTint="@color/textLight"
+                android:textColor="@color/textLight" />
         </RadioGroup>
 
         <EditText
@@ -130,8 +145,10 @@
             android:layout_height="wrap_content"
             android:hint="Select Date"
             android:focusable="false"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black"
+            android:backgroundTint="@color/darkerBackground"
+            android:textColor="@color/textLight"
+            android:textColorHint="@color/hintLight"
+            android:background="@drawable/input_field_bg"
             app:layout_constraintTop_toBottomOf="@id/priorityGroup"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -143,8 +160,10 @@
             android:layout_height="wrap_content"
             android:hint="Select Time"
             android:focusable="false"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black"
+            android:backgroundTint="@color/darkerBackground"
+            android:textColor="@color/textLight"
+            android:textColorHint="@color/hintLight"
+            android:background="@drawable/input_field_bg"
             app:layout_constraintTop_toBottomOf="@id/dateInput"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -155,7 +174,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Save Task"
-            android:textColor="@color/colorOnPrimary"
+            android:textColor="@color/textLight"
             android:backgroundTint="@color/colorPrimary"
             android:fontFamily="sans-serif-medium"
             android:layout_marginTop="16dp"

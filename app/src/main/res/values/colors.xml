@@ -17,4 +17,11 @@
     <color name="chipText">#3730A3</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="backgroundGray">#F5F5F5</color>
+    <color name="textDark">#222222</color>
+    <color name="darkerBackground">#1A1A1A</color>
+    <color name="textLight">#FFFFFF</color>
+    <color name="chipSelectedDark">#7C3AED</color>
+    <color name="chipUnselectedDark">#333333</color>
+    <color name="hintLight">#B3B3B3</color>
 </resources>

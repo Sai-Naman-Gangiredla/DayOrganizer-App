@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -17,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import android.widget.CalendarView;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -53,8 +53,11 @@ public class MainActivity extends AppCompatActivity {
         shareButton = findViewById(R.id.shareButton);
         greetingTextView = findViewById(R.id.greetingTextView);
 
+        // Set up CalendarView
+        setupCalendarView();
+
         taskRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        selectedDateMillis = calendarView.getDate();
+        selectedDateMillis = System.currentTimeMillis();
 
         dbHelper = new TaskDbHelper(this);
         taskAdapter = new TaskAdapter(this, List.of(), (task, isChecked) -> {
@@ -98,12 +101,15 @@ public class MainActivity extends AppCompatActivity {
 
         shareButton.setOnClickListener(v -> shareTasks());
 
+        setGreeting();
+    }
+
+    private void setupCalendarView() {
+        // Set up date selection listener
         calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
             selectedDateString = year + "-" + (month + 1) + "-" + dayOfMonth;
             loadTasksForDate(selectedDateString);
         });
-
-        setGreeting();
     }
 
     @Override

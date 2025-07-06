@@ -14,4 +14,13 @@
         <item name="android:navigationBarColor">@color/colorPrimaryVariant</item>
         <item name="android:windowBackground">@color/colorSurface</item>
     </style>
+
+    <!-- CalendarView Style for Dark Theme -->
+    <style name="CalendarViewStyle" parent="ThemeOverlay.MaterialComponents">
+        <item name="android:textColorPrimary">@color/textLight</item>
+        <item name="android:textColorSecondary">@color/textLight</item>
+        <item name="android:colorAccent">@color/colorPrimary</item>
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryVariant</item>
+    </style>
 </resources>
